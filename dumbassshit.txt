@@ -1,0 +1,125 @@
+
+
+
+
+PLAYERS
+
+Quarterback:
+    Throw Accuracy
+    Throwing Power
+    Throw on the run
+    Stamina
+    Strength
+    Awareness
+    Speed
+    Acceleration
+    Forces passes under pressure: yes or no (available to choose at level 3)
+    Reading pressure: Ideal or Oblivious (available to choose at level 3)
+    Juke
+    Spin
+    Tight Spiral: yes or no (available to choose at level 3)
+    Jump
+    Get rid of ball reflex: yes or no (available to choose at level 3)
+
+
+Running Back:
+    Elusiveness
+    Awareness
+    Speed
+    Speed with ball
+    Acceleration
+    Juke
+    Spin
+    Stiff arm
+    Truck
+    Agility
+    Catching
+    Catch in Traffic
+    Strength
+    Stamina
+    Jump
+    Kick Return
+
+Wide Receiver:
+    Catching
+    Catch in traffic
+    Route Running
+    Speed
+    Strength
+    Juke
+    Stamina
+    Speed with ball
+    Spin
+    Jump
+    Fancy Catch
+    Agility
+    Truck
+    Kick return
+    Acceleration
+    Awareness
+
+Offensive Lineman (Guard, Center, Tackle)
+    Impact Blocking
+    Strength
+    Stamina
+    Pass Block
+    Run Block
+    Awareness
+    Speed
+    Acceleration
+
+Defensive Lineman (Tackle, End)
+    Block Shedding
+    Speed
+    Tackle
+    Hit power
+    Power
+    Finesse
+    Strength
+    Acceleration
+    Awareness
+    Stamina
+
+Linebackers (LOLB, MLB, ROLB)
+    Block Shedding
+    Speed
+    Tackle
+    Hit power
+    Power
+    Finesse
+    Strength
+    Acceleration
+    Awareness
+    Stamina
+    Man coverage
+    Zone coverage
+    Press coverage
+    Play Recognition
+    Pursuit
+
+Defensive Backs (CB, SS, FS)
+    Man coverage
+    Zone coverage
+    Awareness
+    Play recognition
+    Press coverage
+    Tackle
+    Speed
+    Acceleration
+    Catching
+    Catch in traffic
+    Pursuit
+    Stamina
+    Block shedding
+    Hit power
+    Kick Return
+
+Kickers (K, P)
+    Kicking Power
+    Kicking Accuracy
+    Punting Power
+    Punting Accuracy
+
+
+COACHES
+
