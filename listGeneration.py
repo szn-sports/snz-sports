@@ -31,6 +31,14 @@ def skillRange(pos):
 def notCommonSkill():
     return random.randint(0,50)
 
+
+def getMax(level):
+    if level == 'h':
+        return random.randint(85-99)
+
+    
+
+
 nameFile = open('names.txt', 'r')
 allNames = nameFile.readlines()
 
@@ -414,6 +422,7 @@ leagues = {
     'Kicker': 2,
     'Punter': 1
     },'playerCount' : 0},
+
     'The 0x Football Team' : {'leageName' : 'The 0x Football Team', 'positionAmnt' : {
     'Quarterback': 3,
     'Offensive Linemen': 10,
@@ -426,6 +435,7 @@ leagues = {
     'Kicker': 2,
     'Punter': 1
     },'playerCount' : 0},
+
     'Meta Giants' : {'leageName' : 'Meta Giants', 'positionAmnt' : {
     'Quarterback': 3,
     'Offensive Linemen': 10,
@@ -460,6 +470,7 @@ leagueList = list(leagues.keys())
 # GLOBALS
 
 # POSITIONS
+avalLeagues = leagueList
 
 positionTypes = {
     'Quarterback': 3,
@@ -509,7 +520,7 @@ prevCleatType = 0
 players = {}
 artistList = {}
 test = []
-for pid in range(0,848):
+for pid in range(0,1696):
     pid = str(pid)
     playerInfo = {'Name' : '', 'LeagueInformation' : {}, 'Apperence' : {}, 'Skills' : playerSkills, 'Stats' : {}}
 
@@ -533,9 +544,7 @@ for pid in range(0,848):
     fitTypeAssigned = False
 
     
-    
     ranCleatType = random.randint(0,1)
-    ranJerNumber = random.randint(0,53)
     
     # NAME SELECTION
     playerName = nameList[int(pid)]
@@ -544,19 +553,30 @@ for pid in range(0,848):
     # 'RANDOM' LEAGUE SELCTION
     league = ''
     while leagueSelected == False:
-        ranLeague = random.randint(0,15)
+        if(len(leagueList) - 1 == 1):
+            ranLeague = 0
+        
+        if(len(leagueList) == 0):
+            print(pid)
+            break
+        else:
+            ranLeague = random.randint(0,len(leagueList) - 1)
         league = leagueList[ranLeague]
         if leagues[league]['playerCount'] != 53:    
             playerInfo['LeagueInformation'] = leagues[league]
             leagues[league]['playerCount'] += 1
             leagueSelected = True
+        else:
+            # print(league+ ' full at ' +pid)
+            leagueList.remove(league)
+            continue
 
     # JERSEY NUMBER SELECTION
     playerInfo['LeagueInformation']['jerseyNumber'] = jerseyNumbersList[playerInfo['LeagueInformation']['playerCount'] - 1]
-
     # POSITION SELECTION
    
     while positionSelected == False:
+        
         ranPosition = random.randint(0,9)
         position = positionTypeList[ranPosition]
         if leagues[league]['positionAmnt'][position] != 0:
@@ -566,7 +586,7 @@ for pid in range(0,848):
             
 
     # 'RANDOM' SKIN COLOR SELCTION
-    while skinSelected == False:
+    while skinSelected == False:       
         ranSkinColor = random.randint(0,2)
         skinColor = skinColorList[ranSkinColor]
         if skinColors[skinColor] != 0:
@@ -597,6 +617,7 @@ for pid in range(0,848):
         ranMouthStyle = random.randint(0,6)
         mouthStyle = mouthStyleList[ranMouthStyle]
         if mouthStyles[mouthStyle] != 0:
+            mouthStyles[mouthStyle] -= 1
             playerInfo['Apperence']['mouthStyle'] = mouthStyle
             mouthSelected = True  
 
@@ -664,6 +685,7 @@ for pid in range(0,848):
 
 
 
+    
     ## GENERATE SKILL LEVELS BAISED OFF POSITION 
     overallRating = 0
     while skillsAssigned == False:
@@ -767,25 +789,26 @@ for pid in range(0,848):
         test.append(overallRating)
         playerInfo['Skills']['Overall Rating'] = overallRating
 
-        test.sort()
-
-        low = test[0]
-        high = test[-1]
-        avg = round(sum(test) / len(test))
-
-
-    def getMax(level):
-        if level == 'h':
-            return random.randint(85-99)
-
-    
-
+    ranPotential = random.randint(0, 3)
+    if (ranPotential == 0):
+        playerInfo['Apperence']['Potential Rating'] = 'Good'
+        playerInfo['Apperence']['Potential Rating Num'] = random.randint(75,80)
+    if (ranPotential == 1):
+        playerInfo['Apperence']['Potential Rating'] = 'Professional'
+        playerInfo['Apperence']['Potential Rating Num'] = random.randint(81,85)
+    if (ranPotential == 2):
+        playerInfo['Apperence']['Potential Rating'] = 'High'
+        playerInfo['Apperence']['Potential Rating Num'] = random.randint(86,90)
+    if (ranPotential == 3):
+        playerInfo['Apperence']['Potential Rating'] = 'Very High'
+        playerInfo['Apperence']['Potential Rating Num'] = random.randint(91,99)
 
 
     players[pid] = playerInfo
+    
     # FOR ARTIST
     
-    artistList[playerInfo['Name']] = {
+    artistList[pid] = {
         'Player Information' : {
             'Name' : playerInfo['Name'],
             'Team' : league,
@@ -801,7 +824,9 @@ for pid in range(0,848):
             'Cleat Type' : playerInfo['Apperence']['cleatType'],
             'Fit Type' : playerInfo['Apperence']['fitType']
         },
-        'Player Skills' : playerInfo['Skills']
+        'Player Skills' : playerInfo['Skills'],
+        'Potential Rating' : playerInfo['Apperence']['Potential Rating'],
+        'Potential Rating Value' : playerInfo['Apperence']['Potential Rating Num']
     }
 
 
