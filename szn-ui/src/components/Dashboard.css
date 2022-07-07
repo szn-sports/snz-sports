@@ -1,0 +1,11 @@
+.dashboard-container
+{
+    background-color: #000000;
+    height: 80rem;
+    margin: 2rem 2rem 2rem 15rem;
+    border-radius: 25px;
+    padding: 1rem;
+    box-shadow: 3px 9px 8px gray;
+}
+
+

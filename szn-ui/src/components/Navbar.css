@@ -1,0 +1,62 @@
+.navbar-container
+{
+    margin: none;
+    width: 20%;
+    height: 30rem;
+    position: fixed;
+}
+
+.navbar-logo
+{
+    height: 8vw;
+    width: 9.5vw;
+    margin: 0rem 0 0 2rem; 
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px white;
+}
+
+.navbar-list
+{
+    list-style: none;
+}
+
+.navbar-item
+{
+    padding: 0.4rem;
+    color: #fff;
+    border: none;
+    align-items: auto;
+    text-shadow: 2px 2px 8px rgb(128, 128, 128);    
+}
+
+.navbar-links
+{
+    padding: 0.5rem;
+    color: #fff;
+    font-size: 1.2vw;
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: none;
+    justify-self: center;
+}
+
+.navbar-links:hover
+{
+    color: #4BD3E3;
+}
+
+.navbar-wallet-connect
+{
+    margin: 0.3rem;
+    padding: 2.5rem;
+    border: solid 3px;
+    border-color: #fff;
+    width: 37%;
+    font-family: 'Fjalla One', sans-serif;
+    
+}
+
+a
+{
+    color: #fff;
+    font-size: 1vw;
+}
