@@ -7,6 +7,7 @@ import {BsPerson} from 'react-icons/bs';
 import {AiOutlineCalendar} from 'react-icons/ai';
 import {BsGear} from 'react-icons/bs';
 
+
 function Navbar() {
   return (
     <>
@@ -16,9 +17,9 @@ function Navbar() {
             <ul className="navbar-list">
             <li class="navbar-item">
                 <FaList size = "1.2vw"/>
-                <a href="/" class="navbar-links">
+                <Link to="/Dashboard" className="navbar-links">
                 Dashboard
-                </a>
+                </Link>
             </li>
             <li class="navbar-item">
                 <FiMonitor size = "1.2vw"/>
@@ -44,7 +45,7 @@ function Navbar() {
             </li>
             </ul>
             <div class="navbar-wallet-connect">
-                <a>Connect Wallet Here</a>
+                <a>User Info Here</a>
             </div>
         </div>
     </nav>
