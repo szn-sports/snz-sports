@@ -26,7 +26,7 @@
     color: #fff;
     border: none;
     align-items: auto;
-    text-shadow: 2px 2px 8px rgb(128, 128, 128);    
+    /* text-shadow: 2px 2px 8px rgb(128, 128, 128);     */
 }
 
 .navbar-links
@@ -37,11 +37,17 @@
     font-family: 'Fjalla One', sans-serif;
     text-decoration: none;
     justify-self: center;
+    transition: 0.3s;
 }
+
 
 .navbar-links:hover
 {
     color: #4BD3E3;
+}
+
+.navbar-icons{
+    padding-right: 0.5rem;
 }
 
 .navbar-wallet-connect

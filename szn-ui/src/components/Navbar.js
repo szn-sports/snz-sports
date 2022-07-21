@@ -6,6 +6,7 @@ import {FiMonitor} from 'react-icons/fi';
 import {BsPerson} from 'react-icons/bs';
 import {AiOutlineCalendar} from 'react-icons/ai';
 import {BsGear} from 'react-icons/bs';
+import {RiDashboardLine} from 'react-icons/ri';
 
 
 function Navbar() {
@@ -13,35 +14,40 @@ function Navbar() {
     <>
     <nav className="navbar">
         <div className="navbar-container">
-            <Link to="/" className="navbar-link"><img src={process.env.PUBLIC_URL + '/logomaybe.jpg'} className="navbar-logo" /></Link>
+            <img src={process.env.PUBLIC_URL + '/logomaybe.jpg'} className="navbar-logo" />
             <ul className="navbar-list">
             <li class="navbar-item">
-                <FaList size = "1.2vw"/>
-                <Link to="/Dashboard" className="navbar-links">
+                
+                <a href="/" className="navbar-links">
+                <RiDashboardLine size = "1.5vw" className="navbar-icons"/>
                 Dashboard
-                </Link>
+                </a>
             </li>
             <li class="navbar-item">
-                <FiMonitor size = "1.2vw"/>
+                
                 <a href="/" class="navbar-links">
+                <FiMonitor size = "1.5vw" className="navbar-icons"/>
                 Live game
                 </a>
             </li>
             <li class="navbar-item">
-                <BsPerson size = "1.2vw"/>
+                
                 <a href="/" class="navbar-links">
+                <BsPerson size = "1.5vw" className="navbar-icons"/>
                 Your SZN-NFTS
                 </a>
             </li>
             <li class="navbar-item">
-                <AiOutlineCalendar size = "1.2vw"/>
                 <a href="/" class="navbar-links">
+                <AiOutlineCalendar size = "1.5vw" className="navbar-icons"/>
                 Game Schedules
                 </a>
             </li>
             <li class="navbar-item">
-                <BsGear size = "1.2vw"/>
-                <a href="/" class="navbar-links">Settings</a>
+                
+                <a href="/" class="navbar-links">
+                <BsGear size = "1.5vw" className="navbar-icons"/>Settings
+                </a>
             </li>
             </ul>
             <div class="navbar-wallet-connect">
